@@ -1,7 +1,7 @@
 import { getProficiencyLevel } from "@/data/language";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import type { LanguageProps } from "@/types/default";
-import { Award, Calendar, CheckCircle, Star } from "lucide-react";
+import { Award, Calendar, Star } from "lucide-react";
 import { motion } from "motion/react";
 
 const LanguageCard = ({ lang }: { lang: LanguageProps }) => {
