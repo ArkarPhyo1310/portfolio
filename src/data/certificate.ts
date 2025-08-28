@@ -1,6 +1,6 @@
-import type { Certificate } from "@/types/certificate";
+import type { CertificateProps } from "@/types/default";
 
-export const certifications: Certificate[] = [
+export const certifications: CertificateProps[] = [
   {
     title: "AWS Certified Machine Learning - Specialty",
     issuer: "Amazon Web Services",

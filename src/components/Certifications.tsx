@@ -1,10 +1,13 @@
 import { certifications } from "@/data/certificate";
 import { coreSkills } from "@/data/skill";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Medal } from "lucide-react";
+import { motion } from "motion/react";
 import CertificateCard from "./CertificateCard";
 
 const Certifications = () => {
-  const { ref, isInView } = useScrollAnimation();
+  const { ref, isInView, slideInFromLeft, slideInFromRight } =
+    useScrollAnimation();
 
   return (
     <section
@@ -18,9 +21,25 @@ const Certifications = () => {
             isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          <h2 className="text-3xl md:text-4xl mb-4">
-            Certifications & Achievements
-          </h2>
+          <div className="flex items-center justify-center mb-4">
+            <motion.span
+              variants={slideInFromLeft}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+            >
+              <Medal className="w-8 h-8 text-primary mr-3" />
+            </motion.span>
+
+            <motion.h2
+              className="text-3xl md:text-4xl"
+              variants={slideInFromRight}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+            >
+              Certifications & Achievements
+            </motion.h2>
+          </div>
+
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Professional credentials and recognition that validates my expertise
           </p>

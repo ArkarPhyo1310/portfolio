@@ -1,8 +1,8 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import type { Certificate } from "@/types/certificate";
+import type { CertificateProps } from "@/types/default";
 import { Calendar, CheckCircle, ExternalLink } from "lucide-react";
 
-const CertificateCard = ({ cert }: { cert: Certificate }) => {
+const CertificateCard = ({ cert }: { cert: CertificateProps }) => {
   const { ref } = useScrollAnimation();
 
   return (

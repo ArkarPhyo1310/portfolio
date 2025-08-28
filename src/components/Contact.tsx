@@ -1,10 +1,13 @@
 import { contactInfo, socialLinks } from "@/data/contact";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { ConciergeBell } from "lucide-react";
+import { motion } from "motion/react";
 import React from "react";
 import ContactForm from "./ContactForm";
 
 const Contact = () => {
-  const { ref, isInView } = useScrollAnimation();
+  const { ref, isInView, slideInFromLeft, slideInFromRight } =
+    useScrollAnimation();
 
   return (
     <section
@@ -18,7 +21,24 @@ const Contact = () => {
             isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          <h2 className="text-3xl md:text-4xl mb-4">Get In Touch</h2>
+          <div className="flex items-center justify-center mb-4">
+            <motion.span
+              variants={slideInFromLeft}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+            >
+              <ConciergeBell className="w-8 h-8 text-primary mr-3" />
+            </motion.span>
+
+            <motion.h2
+              className="text-3xl md:text-4xl"
+              variants={slideInFromRight}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+            >
+              Get In Touch
+            </motion.h2>
+          </div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Have a project in mind or want to collaborate? I'd love to hear from
             you!
@@ -43,7 +63,7 @@ const Contact = () => {
           <div className="space-y-8">
             <div>
               <h3
-                className={`text-2xl mb-6 transition-all duration-600 delay-150 ${
+                className={`text-2xl mb-6 transition-all duration-600 delay-300 ${
                   isInView
                     ? "opacity-100 translate-x-0"
                     : "opacity-0 translate-x-6"
@@ -57,7 +77,7 @@ const Contact = () => {
                     key={index}
                     href={info.link}
                     target="_blank"
-                    className={`theme-reset flex items-center shadow-md space-x-4 p-4 bg-background rounded-lg hover:bg-accent/50 transition-all duration-300 cursor-pointer group ${
+                    className={`theme-reset flex items-center shadow-md space-x-4 p-4 bg-background rounded-lg hover:bg-accent/50 transition-all duration-300 delay-300 cursor-pointer group ${
                       isInView
                         ? "opacity-100 translate-x-0"
                         : "opacity-0 -translate-x-6"

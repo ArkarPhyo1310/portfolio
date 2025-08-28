@@ -1,6 +1,8 @@
 import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { motion } from "motion/react";
+import { useEffect, useMemo, useState } from "react";
 import ThemeToggle from "./ThemeToggle";
+import { TypingEffectMemo } from "./TypingEffect";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,34 +29,59 @@ const Navigation = () => {
         }
         return false;
       });
-      if (currentSection) {
-        setActiveSection(currentSection);
-      }
+      if (currentSection) setActiveSection(currentSection);
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    if (element) element.scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
   };
 
+  // Stable typing configuration - these will never change
+  const typingConfig = useMemo(
+    () => ({
+      texts: ["Arkar Phyo"],
+      typeSpeed: 120,
+      deleteSpeed: 80,
+      pauseDuration: 2500,
+      startDelay: 500,
+    }),
+    []
+  );
+
   return (
-    <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex-shrink-0">
-            <span className="text-xl font-semibold">Portfolio</span>
-          </div>
+          <motion.div
+            className="flex-shrink-0 min-w-[140px]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            <a
+              href="#home"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("home");
+              }}
+              className="block"
+            >
+              <div className="w-full overflow-hidden">
+                <TypingEffectMemo
+                  {...typingConfig}
+                  className="text-xl font-bold text-primary hover:text-primary/80 transition-colors cursor-pointer whitespace-nowrap"
+                  cursorClassName="text-primary"
+                />
+              </div>
+            </a>
+          </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
@@ -96,12 +123,15 @@ const Navigation = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden">
+        <div className="md:hidden absolute top-16 left-0 right-0">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-b border-border">
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.id);
+                }}
                 className={`block px-3 py-2 rounded-md w-full text-left transition-colors ${
                   activeSection === item.id
                     ? "bg-primary text-primary-foreground"
