@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import { useState } from "react";
 
 const Skills = () => {
-  const { ref, isInView, containerVariants, itemVariants, slideInFromRight } =
+  const { ref, isInView, containerVariants, slideInFromRight } =
     useScrollAnimation();
 
   const categories = [
