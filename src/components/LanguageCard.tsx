@@ -129,7 +129,7 @@ const LanguageCard = ({ lang }: { lang: LanguageProps }) => {
 
           {/* Skills */}
           <div className="mb-6">
-            <h5 className="text-sm mb-3 flex items-center">
+            <h5 className="text-sm mb-3 flex items-center font-semibold">
               <Star className="w-4 h-4 mr-2 text-primary" />
               Core Competencies
             </h5>
@@ -144,9 +144,11 @@ const LanguageCard = ({ lang }: { lang: LanguageProps }) => {
                       ? { opacity: 1, scale: 1 }
                       : { opacity: 0, scale: 0.8 }
                   }
-                  transition={{ delay: 0.6 + skillIndex * 0.05 }}
+                  transition={{
+                    opacity: { delay: 0.6 + skillIndex * 0.05, duration: 0.4 },
+                    scale: { delay: 0.6 + skillIndex * 0.05, duration: 0.4 },
+                  }}
                   whileHover={{
-                    scale: 1.05,
                     backgroundColor: "var(--primary)",
                     color: "var(--primary-foreground)",
                   }}

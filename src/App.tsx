@@ -3,7 +3,7 @@ import About from "./components/About";
 import Background from "./components/Background";
 import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
-import Experience from "./components/Experience";
+import Experiences from "./components/Experiences";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navigation from "./components/Navigation";
@@ -22,7 +22,7 @@ function App() {
             <Hero />
             <About />
             <Skills />
-            <Experience />
+            <Experiences />
             <Languages />
             <Certifications />
             <Contact />

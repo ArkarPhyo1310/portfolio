@@ -83,7 +83,7 @@ const Contact = () => {
                         : "opacity-0 -translate-x-6"
                     } hover:-translate-1`}
                   >
-                    <div className="p-3 bg-primary/10 text-primary rounded-lg transition-transform duration-300 transform-gpu hover:scale-110 hover:rotate-2">
+                    <div className="p-3 border bg-primary/10 text-primary rounded-lg transition-transform duration-300 transform-gpu hover:scale-110 hover:rotate-5">
                       {React.createElement(info.icon, { className: "w-6 h-6" })}
                     </div>
                     <div>
@@ -128,10 +128,10 @@ const Contact = () => {
             </div>
 
             <div
-              className={`bg-background rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-600 delay-400 ${
+              className={`bg-background rounded-lg p-6 shadow-md border border-border hover:shadow-lg transition-all ${
                 isInView
                   ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-4"
+                  : "opacity-0 translate-y-4  delay-600"
               } hover:-translate-y-1.5`}
             >
               <h4 className="text-lg mb-4">Let's work together</h4>

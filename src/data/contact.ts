@@ -1,15 +1,16 @@
 import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { contactLinks } from "./about";
 
 export const socialLinks = [
   {
     icon: Github,
     name: "GitHub",
-    url: "https://github.com/ArkarPhyo1310",
+    url: contactLinks.github,
   },
   {
     icon: Linkedin,
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/arkarphyo-akp1996",
+    url: contactLinks.linkedIn,
   },
 ];
 
@@ -17,14 +18,14 @@ export const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    content: "arkar.dev96@gmail.com",
-    link: "mailto:arkar.dev96@gmail.com",
+    content: contactLinks.mail,
+    link: `mailto:${contactLinks.mail}`,
   },
   {
     icon: Phone,
     title: "Phone",
-    content: "+66 10681379",
-    link: "tel:+6610681379",
+    content: contactLinks.phone,
+    link: `tel:${contactLinks.phone}`,
   },
   {
     icon: MapPin,

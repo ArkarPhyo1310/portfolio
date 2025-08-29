@@ -1,8 +1,7 @@
 import { Menu, X } from "lucide-react";
 import { motion } from "motion/react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import ThemeToggle from "./ThemeToggle";
-import { TypingEffectMemo } from "./TypingEffect";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +11,7 @@ const Navigation = () => {
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
     { id: "skills", label: "Skills" },
-    { id: "experience", label: "Experience" },
+    { id: "experience", label: "Experiences" },
     { id: "languages", label: "Languages" },
     { id: "certifications", label: "Certifications" },
     { id: "contact", label: "Contact" },
@@ -43,18 +42,6 @@ const Navigation = () => {
     setIsOpen(false);
   };
 
-  // Stable typing configuration - these will never change
-  const typingConfig = useMemo(
-    () => ({
-      texts: ["Arkar Phyo"],
-      typeSpeed: 120,
-      deleteSpeed: 80,
-      pauseDuration: 2500,
-      startDelay: 500,
-    }),
-    []
-  );
-
   return (
     <nav className="fixed top-0 left-0 right-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,20 +53,14 @@ const Navigation = () => {
             transition={{ delay: 0.2 }}
           >
             <a
-              href="#home"
+              href="home"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection("home");
               }}
-              className="block"
+              className="block w-full overflow-hidden text-xl font-bold text-primary hover:text-primary/80 transition-colors cursor-pointer whitespace-nowrap"
             >
-              <div className="w-full overflow-hidden">
-                <TypingEffectMemo
-                  {...typingConfig}
-                  className="text-xl font-bold text-primary hover:text-primary/80 transition-colors cursor-pointer whitespace-nowrap"
-                  cursorClassName="text-primary"
-                />
-              </div>
+              Arkar
             </a>
           </motion.div>
 

@@ -34,7 +34,7 @@ export const languages: LanguageProps[] = [
     level: "TOEIC",
     certificate: "TOEIC Certificate",
     issuer: "ETS",
-    score: 860,
+    score: 0,
     totalScore: 990,
     date: "2025",
     credentialId: "TOEIC-2025-860-445",
