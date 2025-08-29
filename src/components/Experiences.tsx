@@ -1,13 +1,11 @@
 import { workExperiences } from "@/data/about";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { ExternalLink } from "lucide-react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import ExperienceCard from "./ExperienceCard";
 
 const Experiences = () => {
-  const { ref, isInView, containerVariants, itemVariants } =
-    useScrollAnimation();
+  const { ref, isInView } = useScrollAnimation();
   const timelineRef = useRef<HTMLDivElement>(null);
 
   // Scroll progress for timeline animation

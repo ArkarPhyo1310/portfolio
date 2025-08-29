@@ -1,5 +1,4 @@
 import { workExperiences } from "@/data/about";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Award, Calendar, MapPin } from "lucide-react";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
@@ -12,8 +11,6 @@ const ExperienceCard = ({
   index: number;
 }) => {
   const itemRef = useRef<HTMLDivElement>(null);
-  const { ref, isInView, containerVariants, itemVariants } =
-    useScrollAnimation();
   const isItemInView = useInView(itemRef, {
     once: true,
     margin: "-10% 0px -10% 0px",
