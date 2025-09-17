@@ -95,8 +95,8 @@ const About = () => {
           className="mt-12 text-center space-y-6 italic font-bold"
         >
           <p className="text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            I enjoy hiking, photography, and exploring new technologies. I
-            believe in writing clean, maintainable code, fostering teamwork, and
+            I enjoy badminton, gaming, and exploring new technologies. I believe
+            in writing clean, maintainable code, fostering teamwork, and
             creating AI solutions that have real-world impact.
           </p>
         </motion.div>

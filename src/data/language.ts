@@ -7,11 +7,11 @@ export const languages: LanguageProps[] = [
     level: "N3",
     certificate: "NAT-TEST Language Certificate",
     issuer: "NAT-TEST",
-    score: 160,
+    score: 136,
     totalScore: 180,
     date: "2025",
-    credentialId: "25060058440025",
-    filePath: "src/assets/25060058440025.pdf",
+    credentialId: "25080058430038",
+    filePath: "/certificates/jp.pdf",
     description:
       "Pre-intermediate proficiency in Japanese with ability to understand everyday situations, follow conversations on familiar topics, and read moderately complex texts.",
     skills: [
@@ -38,7 +38,7 @@ export const languages: LanguageProps[] = [
     totalScore: 990,
     date: "2025",
     credentialId: "TOEIC-2025-860-445",
-    filePath: "src/assets/TOEIC-2025-860.pdf",
+    filePath: "/certificates/en.pdf",
     description:
       "Advanced English proficiency with strong ability to understand workplace communication, read technical documents, and follow extended conversations in professional settings.",
     skills: [

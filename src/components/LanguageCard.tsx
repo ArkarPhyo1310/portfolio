@@ -1,7 +1,7 @@
 import { getProficiencyLevel } from "@/data/language";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import type { LanguageProps } from "@/types/default";
-import { Award, Calendar, Star } from "lucide-react";
+import { Award, Calendar, DownloadIcon, Star } from "lucide-react";
 import { motion } from "motion/react";
 
 const LanguageCard = ({ lang }: { lang: LanguageProps }) => {
@@ -53,6 +53,11 @@ const LanguageCard = ({ lang }: { lang: LanguageProps }) => {
                 {getProficiencyLevel(Number(calProficienty(lang))).label}
               </span>
             </div>
+            <a href={lang.filePath} download>
+              <button className="mt-4 hover:scale-120 transition-all">
+                <DownloadIcon />
+              </button>
+            </a>
           </div>
 
           {/* Progres bar */}
@@ -135,26 +140,12 @@ const LanguageCard = ({ lang }: { lang: LanguageProps }) => {
             </h5>
             <div className="flex flex-wrap gap-2">
               {lang.skills.map((skill, skillIndex) => (
-                <motion.span
+                <span
                   key={skillIndex}
                   className="px-3 py-1 bg-accent text-accent-foreground rounded-full text-xs"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={
-                    isInView
-                      ? { opacity: 1, scale: 1 }
-                      : { opacity: 0, scale: 0.8 }
-                  }
-                  transition={{
-                    opacity: { delay: 0.6 + skillIndex * 0.05, duration: 0.4 },
-                    scale: { delay: 0.6 + skillIndex * 0.05, duration: 0.4 },
-                  }}
-                  whileHover={{
-                    backgroundColor: "var(--primary)",
-                    color: "var(--primary-foreground)",
-                  }}
                 >
                   {skill}
-                </motion.span>
+                </span>
               ))}
             </div>
           </div>

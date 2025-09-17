@@ -128,7 +128,7 @@ const Hero = () => {
           </motion.div>
           <motion.div variants={itemVariants} className="flex space-x-4">
             {/* Resume Button */}
-            <a href="/Arkar_Phyo.pdf" download>
+            <a href="/resumes/Arkar_Phyo.pdf" download>
               <div className="relative group w-[200px] items-center">
                 <div className="absolute inset-0 rounded-lg p-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-hidden">
                   <motion.div

@@ -62,7 +62,7 @@ export const skills = [
   },
   {
     name: "Flask",
-    logo: "/flask.svg",
+    logo: "/icons/flask.svg",
     category: "Frameworks & Libraries",
     color: "#000000",
   },
