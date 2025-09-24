@@ -23,8 +23,8 @@ const LanguageCard = ({ lang }: { lang: LanguageProps }) => {
         transition: { duration: 0.3 },
       }}
     >
-      <div className="bg-accent-foreground p-1">
-        <div className="bg-background rounded-xl p-8 pt-1">
+      <div className="relative bg-accent-foreground p-1 h-full">
+        <div className="relative bg-background rounded-xl p-8 pt-1 h-full">
           {/* Language Header */}
           <div className="flex items-center justify-between mb-4">
             <div className="absolute -top-3 -left-0 z-10 w-[60px] bg-accent-foreground text-background text-3xl text-center rounded-br-xl py-3 px-3">
@@ -36,6 +36,7 @@ const LanguageCard = ({ lang }: { lang: LanguageProps }) => {
                   repeatType: "reverse",
                   ease: "easeInOut",
                 }}
+                className="mt-3"
               >
                 {lang.flag}
               </motion.p>
@@ -160,7 +161,7 @@ const LanguageCard = ({ lang }: { lang: LanguageProps }) => {
               {lang.achievements.map((achievement, achIndex) => (
                 <motion.div
                   key={achIndex}
-                  className="flex items-center space-x-2 text-sm text-muted-foreground"
+                  className="flex items-baseline space-x-2 text-sm text-muted-foreground"
                   initial={{ opacity: 0, x: -20 }}
                   animate={
                     isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }

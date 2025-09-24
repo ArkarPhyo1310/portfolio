@@ -15,7 +15,7 @@ export const contactLinks = {
 export const workExperiences = [
   {
     company: "Global Walkers Co. Ltd",
-    position: "Senior AI Engineer / Team Lead",
+    position: "Senior AI Engineer",
     duration: "2022 - 2025",
     location: "Yangon, Myanmar",
     type: "Full-time",

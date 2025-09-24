@@ -10,8 +10,8 @@ const CertificateCard = ({ cert }: { cert: CertificateProps }) => {
       ref={ref}
       className="bg-background rounded-lg overflow-hidden shadow-sm border border-border group cursor-pointer transform transition-transform duration-300 hover:-translate-y-2 hover:scale-[1.02]"
     >
-      <div className={`bg-gradient-to-r ${cert.color} p-1`}>
-        <div className="bg-background rounded-lg p-6">
+      <div className={`bg-gradient-to-r ${cert.color} p-1 h-full`}>
+        <div className="bg-background rounded-lg p-6 h-full">
           <div className="flex items-start justify-between mb-4">
             <div className="flex items-center space-x-4">
               <img
