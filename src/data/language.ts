@@ -34,10 +34,10 @@ export const languages: LanguageProps[] = [
     level: "TOEIC",
     certificate: "TOEIC Certificate",
     issuer: "ETS",
-    score: 0,
+    score: 915,
     totalScore: 990,
     date: "2025",
-    credentialId: "TOEIC-2025-860-445",
+    credentialId: "00000000000000044578",
     filePath: "/certificates/en.pdf",
     description:
       "Advanced English proficiency with strong ability to understand workplace communication, read technical documents, and follow extended conversations in professional settings.",
